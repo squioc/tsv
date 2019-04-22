@@ -49,3 +49,21 @@ Converts tsv records into json
 
     $ cat cells.tsv | tsv-json --columns first,second
     [{"first":"cell1","second":"cell2"}]
+
+### tsv-jsonline
+
+Converts tsv records into [jsonline](jsonlines.org/)
+
+#### Installation
+
+    $ go get github.com/squioc/tsv/cmd/tsv-jsonline
+
+#### Usage
+
+    $ tsv-jsonline --columns first,second
+    cell1     cell2
+    ^D
+    {"first":"cell1","second":"cell2"}
+
+    $ cat cells.tsv | tsv-jsonline --columns first,second
+    {"first":"cell1","second":"cell2"}
