@@ -31,3 +31,21 @@ Converts tsv records into yaml
     $ cat cells.tsv | tsv-yaml --columns first,second
     - first: cell1
       second: cell2
+
+### tsv-json
+
+Converts tsv records into json
+
+#### Installation
+
+    $ go get github.com/squioc/tsv/cmd/tsv-json
+
+#### Usage
+
+    $ tsv-json --columns first,second
+    cell1     cell2
+    ^D
+    [{"first":"cell1","second":"cell2"}]
+
+    $ cat cells.tsv | tsv-json --columns first,second
+    [{"first":"cell1","second":"cell2"}]
