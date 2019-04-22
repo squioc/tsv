@@ -7,3 +7,27 @@ It is inspired by [solidsnack/tsv](github.com/solidsnack/tsv) and thoughts from 
 ## Installation
 
     $ go get github.com/squioc/tsv/pkg/tsv
+
+## Tools companion
+
+TSV holds a set of tools to manipulate Tabular data.
+
+### tsv-yaml
+
+Converts tsv records into yaml
+
+#### Installation
+
+    $ go get github.com/squioc/tsv/cmd/tsv-yaml
+
+#### Usage
+
+    $ tsv-yaml --columns first,second
+    cell1     cell2
+    ^D
+    - first: cell1
+      second: cell2
+
+    $ cat cells.tsv | tsv-yaml --columns first,second
+    - first: cell1
+      second: cell2
