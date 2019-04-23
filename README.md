@@ -67,3 +67,21 @@ Converts tsv records into [jsonline](jsonlines.org/)
 
     $ cat cells.tsv | tsv-jsonline --columns first,second
     {"first":"cell1","second":"cell2"}
+
+### tsv-fmt
+
+Format the tsv input in order to vertically align columns
+
+#### Installation
+
+    $ go get github.com/squioc/tsv/cmd/tsv-fmt
+
+#### Usage
+
+    $ tsv-fmt cells.tsv 
+    cell1     cell2
+    columns1  columns2
+
+    $ cat cells.tsv | tsv-fmt
+    cell1     cell2
+    columns1  columns2
