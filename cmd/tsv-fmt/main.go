@@ -45,7 +45,16 @@ func widthsFromRecords(records [][]string) []int {
 	widths := make([]int, nbColumns)
 
 	for _, record := range records {
-		for columnIndex := 0; columnIndex < nbColumns; columnIndex++ {
+		nbCells := len(record)
+
+		if nbColumns < nbCells {
+			nbColumns = len(record)
+			tmpWidths := make([]int, nbColumns)
+			copy(tmpWidths, widths)
+			widths = tmpWidths
+		}
+
+		for columnIndex := 0; columnIndex < nbCells; columnIndex++ {
 			valueLen := len(record[columnIndex])
 			if len(widths) < nbColumns {
 				widths = append(widths, valueLen)
